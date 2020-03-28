@@ -13,6 +13,7 @@ final int GROUND = 80;
 int soldierFloor=0;
 int soldierWalk=0;
 int robotLocate=0;
+int robotFloor=0;
 
 void setup() {
 	size(640, 480, P2D);
@@ -24,8 +25,9 @@ void setup() {
   robotImg = loadImage("img/robot.png");
   soldierImg = loadImage("img/soldier.png");
   //soldier
-  soldierFloor=floor(random(0,3));
+  soldierFloor=floor(random(0,4));
   robotLocate=floor(random(0,6))+2;
+  robotFloor=floor(random(0,4));
   
 }
 
@@ -61,6 +63,6 @@ void draw() {
   }
   
   //robot
-  image(robotImg, robotLocate*GROUND, height-soldierFloor*80-SOIDIER_H,ROBOT_W,ROBOT_H);
+  image(robotImg, robotLocate*GROUND, height-robotFloor*80-SOIDIER_H,ROBOT_W,ROBOT_H);
 
 }
