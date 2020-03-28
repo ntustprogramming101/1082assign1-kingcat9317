@@ -14,6 +14,7 @@ int soldierFloor=0;
 int soldierWalk=0;
 int robotLocate=0;
 int robotFloor=0;
+float laserX=0,laserY=0;
 
 void setup() {
 	size(640, 480, P2D);
@@ -63,6 +64,22 @@ void draw() {
   }
   
   //robot
-  image(robotImg, robotLocate*GROUND, height-robotFloor*80-SOIDIER_H,ROBOT_W,ROBOT_H);
+  image(robotImg, robotLocate*GROUND, height-robotFloor*80-ROBOT_H,ROBOT_W,ROBOT_H);
+  
+  //laser
+  strokeWeight(10);
+  stroke(255,0,0);
+  
+  println(robotLocate*GROUND+35-laserY);
+  println(robotLocate*GROUND+35-ROBOT_W*2);
 
+  if(robotLocate*GROUND+35-laserY>robotLocate*GROUND+35-ROBOT_W*2){
+    line(robotLocate*GROUND+35-laserX, height-robotFloor*80-ROBOT_H/2,robotLocate*GROUND+35-laserY, height-robotFloor*80-ROBOT_H/2);
+    laserX++;
+    laserY+=1.5;
+  }
+  else{
+    laserX=0;
+    laserY=0;
+  }
 }
