@@ -8,6 +8,11 @@ final int SOIDIER_W = 80;
 final int SOIDIER_H = 80;
 final int ROBOT_W = 80;
 final int ROBOT_H = 80;
+final int GROUND = 80;
+
+int soldierFloor=0;
+int soldierWalk=0;
+int robotLocate=0;
 
 void setup() {
 	size(640, 480, P2D);
@@ -18,7 +23,9 @@ void setup() {
   lifeImg = loadImage("img/life.png");
   robotImg = loadImage("img/robot.png");
   soldierImg = loadImage("img/soldier.png");
-  
+  //soldier
+  soldierFloor=floor(random(0,3));
+  robotLocate=floor(random(0,6))+2;
   
 }
 
@@ -43,5 +50,17 @@ void draw() {
   
   //groundhog
   image(hogImg,width/2-HOG_WH/2,160-HOG_WH,HOG_WH,HOG_WH);
+  
+  //soldier
+  image(soldierImg, soldierWalk , height-soldierFloor*80-SOIDIER_H,SOIDIER_W,SOIDIER_H);
+  if( soldierWalk<=width){
+    soldierWalk++;
+  }
+  else{
+    soldierWalk=0;
+  }
+  
+  //robot
+  image(robotImg, robotLocate*GROUND, height-soldierFloor*80-SOIDIER_H,ROBOT_W,ROBOT_H);
 
 }
