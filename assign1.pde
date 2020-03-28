@@ -69,9 +69,6 @@ void draw() {
   //laser
   strokeWeight(10);
   stroke(255,0,0);
-  
-  println(robotLocate*GROUND+35-laserY);
-  println(robotLocate*GROUND+35-ROBOT_W*2);
 
   if(robotLocate*GROUND+35-laserY>robotLocate*GROUND+35-ROBOT_W*2){
     line(robotLocate*GROUND+30-laserX, height-robotFloor*80-ROBOT_H/2,robotLocate*GROUND+30-laserY, height-robotFloor*80-ROBOT_H/2);
