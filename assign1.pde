@@ -74,7 +74,7 @@ void draw() {
   println(robotLocate*GROUND+35-ROBOT_W*2);
 
   if(robotLocate*GROUND+35-laserY>robotLocate*GROUND+35-ROBOT_W*2){
-    line(robotLocate*GROUND+35-laserX, height-robotFloor*80-ROBOT_H/2,robotLocate*GROUND+35-laserY, height-robotFloor*80-ROBOT_H/2);
+    line(robotLocate*GROUND+30-laserX, height-robotFloor*80-ROBOT_H/2,robotLocate*GROUND+30-laserY, height-robotFloor*80-ROBOT_H/2);
     laserX++;
     laserY+=1.5;
   }
