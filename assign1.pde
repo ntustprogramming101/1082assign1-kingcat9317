@@ -11,7 +11,7 @@ final int ROBOT_H = 80;
 final int GROUND = 80;
 
 int soldierFloor=0;
-int soldierWalk=0;
+int soldierWalk;
 int robotLocate=0;
 int robotFloor=0;
 float laserX=0,laserY=0;
@@ -29,6 +29,7 @@ void setup() {
   soldierFloor=floor(random(0,4));
   robotLocate=floor(random(0,6))+2;
   robotFloor=floor(random(0,4));
+  soldierWalk=-SOIDIER_W
   
 }
 
@@ -60,7 +61,7 @@ void draw() {
     soldierWalk++;
   }
   else{
-    soldierWalk=0;
+    soldierWalk=-SOIDIER_W;
   }
   
   //robot
