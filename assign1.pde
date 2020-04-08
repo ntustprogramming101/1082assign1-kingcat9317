@@ -64,8 +64,7 @@ void draw() {
     soldierWalk=-SOIDIER_W;
   }
   
-  //robot
-  image(robotImg, robotLocate*GROUND, height-robotFloor*80-ROBOT_H,ROBOT_W,ROBOT_H);
+
   
   //laser
   strokeWeight(10);
@@ -84,4 +83,7 @@ void draw() {
     laserX=0;
     laserY=0;
   }
+  
+  //robot
+  image(robotImg, robotLocate*GROUND, height-robotFloor*80-ROBOT_H,ROBOT_W,ROBOT_H);
 }
