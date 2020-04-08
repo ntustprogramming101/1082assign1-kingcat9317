@@ -17,8 +17,8 @@ int robotFloor=0;
 float laserX=0,laserY=0;
 
 void setup() {
-	size(640, 480, P2D);
-	// Enter Your Setup Code Here
+  size(640, 480, P2D);
+  // Enter Your Setup Code Here
   bgImg = loadImage("img/bg.jpg");
   soilImg = loadImage("img/soil.png");
   hogImg = loadImage("img/groundhog.png");
@@ -29,12 +29,12 @@ void setup() {
   soldierFloor=floor(random(0,4));
   robotLocate=floor(random(0,6))+2;
   robotFloor=floor(random(0,4));
-  soldierWalk=-SOIDIER_W
+  soldierWalk=-SOIDIER_W;
   
 }
 
 void draw() {
-	// Enter Your Code Here
+  // Enter Your Code Here
   image(bgImg, 0, 0,width, height);
   image(soilImg, 0, 160,SOIL_W, SOIL_H);
   //draw heart
@@ -72,9 +72,13 @@ void draw() {
   stroke(255,0,0);
 
   if(robotLocate*GROUND+35-laserY>robotLocate*GROUND+35-ROBOT_W*2){
-    line(robotLocate*GROUND+30-laserX, height-robotFloor*80-ROBOT_H/2,robotLocate*GROUND+30-laserY, height-robotFloor*80-ROBOT_H/2);
+    line(robotLocate*GROUND+25-laserX, height-robotFloor*80-ROBOT_H+37,robotLocate*GROUND+25-laserY, height-robotFloor*80-ROBOT_H+37);
     laserX++;
-    laserY+=1.5;
+    if(laserY-laserX>=40){
+      laserY++;
+    }else{
+    laserY+=2;
+    }
   }
   else{
     laserX=0;
